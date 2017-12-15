@@ -1,4 +1,4 @@
 #ignored files and directories
 /projectenv
 /*/__pycache__
-
+*.pyc
