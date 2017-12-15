@@ -1,0 +1,4 @@
+#ignored files and directories
+/projectenv
+/static
+
