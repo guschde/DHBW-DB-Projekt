@@ -1,4 +1,4 @@
 #ignored files and directories
 /projectenv
-/static
+/*/__pycache__
 
