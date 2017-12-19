@@ -26,15 +26,17 @@ SECRET_KEY = 'ysw(ku90oo#ybhu1n=n34dhn!b8=y%o(e6s0fexxv38)a!*6n2'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'34.214.144.98',
-'ec2-34-214-144-98.us-west-2.compute.amazonaws.com',
-'0.0.0.0',
+    '34.214.144.98',
+    'ec2-34-214-144-98.us-west-2.compute.amazonaws.com',
+    '0.0.0.0',
+    '127.0.0.1',
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'dbproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -109,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Berlin'
 
 USE_I18N = True
 
