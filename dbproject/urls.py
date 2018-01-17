@@ -18,7 +18,9 @@ from django.contrib import admin
 
 urlpatterns = [
     path('', include('index.urls')),
+    path('formular/', include('index.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
+    
 ]
 
