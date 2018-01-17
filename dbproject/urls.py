@@ -1,5 +1,5 @@
 """dbproject URL Configuration
-
+ path('formular/', include('index.urls')),
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
 Examples:
@@ -17,8 +17,7 @@ from django.urls import include, path
 from django.contrib import admin
 
 urlpatterns = [
-    path('', include('index.urls')),
-    path('formular/', include('index.urls')),
+    path('', include('index.urls')),  
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     

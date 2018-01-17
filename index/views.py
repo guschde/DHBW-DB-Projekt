@@ -16,7 +16,7 @@ class IndexView(generic.ListView):
     context_object_name = 'liste'
 
     def get_queryset(self):
-         liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+         liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot', 'ignore ist bestes gnore']
          return liste
 
 
