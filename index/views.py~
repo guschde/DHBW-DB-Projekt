@@ -19,12 +19,3 @@ class IndexView(generic.ListView):
          liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
          return liste
 
-
-class FormView(generic.ListView):    
-    template_name = 'index/formular.html'
-    context_object_name = 'liste'
-
-    def get_queryset(self):
-         liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-         return liste
-
