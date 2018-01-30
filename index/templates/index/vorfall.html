@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static 'bootstrap/favicon.png' %}" />
-    <title>Dashboard Einsatz-Info</title>
+    <title>Vorfall anlegen</title>
   </head>
 
   <body>
@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Dashboard <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Dashboard<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/polls">Polls</a>
@@ -45,7 +45,7 @@
       <div class="row">
         
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
-          <h1>Dashboard</h1>
+          <h1>Vorfall anlegen</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
                 <a href="/einsatz"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
@@ -65,45 +65,26 @@
             </div>
           </section>
 
-
-          <h2>Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Number one</th>
-                  <th>Attr Eins</th>
-                  <th>Attr zwei</th>
-                  <th>Attr drei</th>
-                  <th>Attr vier</th>
-                </tr>
-              </thead>
-              <tbody>
-               
-{% if liste %}   
-    {% for x in liste %}
-        <tr>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-        </tr>
-    {% endfor %}
-
-{% else %}
-        <tr>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-        </tr>
-{% endif %}
-              </tbody>
-            </table>
-          </div>
         </main>
+      </div>
+    </div>
+
+     <div class="container">
+      <h2>Eingabefelder</h2>
+         <div class="row">
+
+          <div class="col-lg-6 portfolio-item">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="date" placeholder="Password">
+            <h4>User</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
+            <h4>Passwort</h4><input class="form-control mr-sm-2" type="password" placeholder="Password">
+          </div>
+          <div class="col-lg-6 portfolio-item">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="Password">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
+            <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
+          </div>
+          </main>
       </div>
     </div>
     <!-- ================================================== -->
