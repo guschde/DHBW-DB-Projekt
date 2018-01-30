@@ -1,5 +1,5 @@
 from django.db import models
 
-class Einsatz
+#class Einsatz
 
 
