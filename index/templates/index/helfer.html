@@ -1,3 +1,4 @@
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
@@ -10,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static 'bootstrap/favicon.png' %}" />
-    <title>Dashboard Einsatz-Info</title>
+    <title>Helfer anlegen</title>
   </head>
 
   <body>
@@ -18,18 +19,15 @@
       <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Dashboard</a>
+      <a class="navbar-brand" href="/">Home</a>
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Dashboard<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/polls">Polls</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
@@ -45,76 +43,54 @@
 
     <div class="container-fluid">
       <div class="row">
-        
+
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
-          <h1>Dashboard</h1>
+          <h1>Helfer anlegen</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <div class="text-muted">Something else</div>
+                <a href="/einsatz"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Einsatz anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/helfer"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Helfer anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/vorfall"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Vorfall berichten</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/ansprechpartner"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Ansprechpartner anlegen</h4>
             </div>
           </section>
 
-          <h2>Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Number one</th>
-                  <th>Attr Eins</th>
-                  <th>Attr zwei</th>
-                  <th>Attr drei</th>
-                  <th>Attr vier</th>
-                </tr>
-              </thead>
-              <tbody>
-               
-{% if liste %}   
-    {% for x in liste %}
-        <tr>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-            <td>{{ x }}</td>
-        </tr>
-    {% endfor %}
-
-{% else %}
-        <tr>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-            <td>hat nicht geklappt</td>
-        </tr>
-{% endif %}
-              </tbody>
-            </table>
-          </div>
         </main>
+      </div>
+    </div>
+
+     <div class="container">
+      <h2>Eingabefelder</h2>
+         <div class="row">
+
+          <div class="col-lg-6 portfolio-item">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="date" placeholder="Password">
+            <h4>User</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
+            <h4>Passwort</h4><input class="form-control mr-sm-2" type="password" placeholder="Password">
+          </div>
+          <div class="col-lg-6 portfolio-item">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="Password">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
+            <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
+            <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
+          </div>
+          </main>
       </div>
     </div>
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="{% static 'bootstrap/docs/assets/js/vendor/jquery.slim.min.js' %}"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
   </body>
