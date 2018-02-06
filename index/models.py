@@ -1,5 +1,6 @@
 from django.db import models
 
+<<<<<<< HEAD
 class Personal(models.Model):
 	Vorname = models.CharField(max_length=50)
 	Name = models.CharField(max_length=50)
@@ -76,5 +77,8 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
+=======
+#class Einsatz
+>>>>>>> cf35e8f22044424357fd867b162cfdd682c7c578
 
 
