@@ -1,8 +1,7 @@
 
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
-<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
 
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 {% if latest_question_list %}
     <ul>
     {% for question in latest_question_list %}
