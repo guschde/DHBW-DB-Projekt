@@ -1,4 +1,3 @@
-
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
@@ -30,9 +29,6 @@
             <a class="nav-link" href="/polls">Polls</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/formular">Formular</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
         </ul>
@@ -51,26 +47,23 @@
           <h1>Dashboard</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <div class="text-muted">Something else</div>
+                <a href="/einsatz"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Einsatz anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/helfer"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Helfer anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/vorfall"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Vorfall berichten</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+                <a href="/ansprechpartner"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Ansprechpartner anlegen</h4>
             </div>
           </section>
+
 
           <h2>Section title</h2>
           <div class="table-responsive">
@@ -120,5 +113,3 @@
     <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
   </body>
 </html>
-
-

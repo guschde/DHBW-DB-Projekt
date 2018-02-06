@@ -8,23 +8,59 @@ from django.utils import timezone
 from django.http import HttpResponse
 
 
-#def index(request):
+# def index(request):
 #    return HttpResponse("huhu i bims der index")
-    
-class IndexView(generic.ListView):    
+
+class IndexView(generic.ListView):
     template_name = 'index/index.html'
     context_object_name = 'liste'
 
     def get_queryset(self):
-         liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot', 'ignore ist bestes gnore']
-         return liste
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot', 'ignore ist bestes gnore']
+        return liste
 
 
-class FormView(generic.ListView):    
+class FormView(generic.ListView):
     template_name = 'index/formular.html'
     context_object_name = 'liste'
 
     def get_queryset(self):
-         liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-         return liste
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+        return liste
 
+
+class Einsatz(generic.ListView):
+    template_name = 'index/einsatz.html'
+    context_object_name = 'liste'
+
+    def get_queryset(self):
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+        return liste
+
+
+class Helfer(generic.ListView):
+    template_name = 'index/helfer.html'
+    context_object_name = 'liste'
+
+    def get_queryset(self):
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+        return liste
+
+
+class Vorfall(generic.ListView):
+    template_name = 'index/vorfall.html'
+    context_object_name = 'liste'
+
+    def get_queryset(self):
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+        return liste
+
+
+class Ansprechpartner(generic.ListView):
+    template_name = 'index/ansprechpartner.html'
+    context_object_name = 'liste'
+
+    def get_queryset(self):
+        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
+
+        return liste
