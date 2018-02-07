@@ -7,10 +7,10 @@ app_name = 'index'
 urlpatterns = [
 
     path('', views.IndexView.as_view(), name='index'),
-    path('einsatz/', views.Einsatz.as_view(), name='einsatz'),
-    path('vorfall/', views.Vorfall.as_view(), name='vorfall'),
-    path('helfer/', views.Helfer.as_view(), name='helfer'),
-    path('ansprechpartner/', views.Ansprechpartner.as_view(), name='ansprechpartner'),
+    path('einsatz/', views.EinsatzView.as_view(), name='einsatz'),
+    path('vorfall/', views.VorfallView.as_view(), name='vorfall'),
+    path('personal/', views.PersonalView.as_view(), name='personal'),
+    path('ansprechpartner/', views.AnsprechpartnerView.as_view(), name='ansprechpartner'),
 
 ]
 

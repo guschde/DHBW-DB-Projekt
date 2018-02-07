@@ -6,61 +6,52 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.http import HttpResponse
+from .models import Personal, Einsatz, Ansprechpartner, Vorfall, Dienst
 
-
-# def index(request):
-#    return HttpResponse("huhu i bims der index")
 
 class IndexView(generic.ListView):
     template_name = 'index/index.html'
-    context_object_name = 'liste'
-
+    context_object_name = 'listoflists'
     def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot', 'ignore ist bestes gnore']
-        return liste
+        listoflists=[]
+        vorfalllist = Vorfall.objects.all()
+        listoflists.append(vorfalllist)
+
+        einsatzlist = Einsatz.objects.all()
+        listoflists.append(einsatzlist)
+
+        personallist=Personal.objects.all()
+        listoflists.append(personallist)
+
+        ansprechparterlist = Ansprechpartner.objects.all()
+        listoflists.append(ansprechparterlist)
+
+        return listoflists
 
 
-class FormView(generic.ListView):
-    template_name = 'index/formular.html'
-    context_object_name = 'liste'
-
-    def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-        return liste
-
-
-class Einsatz(generic.ListView):
+class EinsatzView(generic.ListView):
     template_name = 'index/einsatz.html'
     context_object_name = 'liste'
-
     def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-        return liste
+        return Einsatz.objects.all()
 
 
-class Helfer(generic.ListView):
-    template_name = 'index/helfer.html'
+class PersonalView(generic.ListView):
+    template_name = 'index/personal.html'
     context_object_name = 'liste'
-
     def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-        return liste
+        return Personal.objects.all()
 
 
-class Vorfall(generic.ListView):
+class VorfallView(generic.ListView):
     template_name = 'index/vorfall.html'
     context_object_name = 'liste'
-
     def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-        return liste
+        return Vorfall.objects.all()
 
 
-class Ansprechpartner(generic.ListView):
+class AnsprechpartnerView(generic.ListView):
     template_name = 'index/ansprechpartner.html'
     context_object_name = 'liste'
-
     def get_queryset(self):
-        liste = ['huhu', 'haha', 'es wird langsam', 'wärmer', 'wärmer', 'heisser', 'Jackpot']
-
-        return liste
+        return Ansprechpartner.objects.all()
