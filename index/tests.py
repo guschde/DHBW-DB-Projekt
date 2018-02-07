@@ -1,7 +1,7 @@
 from django.test import TestCase
 
 # Create your tests here.
-liste = ['huhu', 'huhi']
+liste = ['huhu', 'huhi', 1]
 
 def listerer(liste):
     for x in liste:

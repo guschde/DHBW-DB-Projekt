@@ -51,8 +51,8 @@
               <h4>Einsatz anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/helfer"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Helfer anlegen</h4>
+                <a href="/personal"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Personal anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
                 <a href="/vorfall"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
@@ -83,6 +83,47 @@
             <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
             <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
           </div>
+
+            <h2>Vorfall</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Einsatz</th>
+                  <th>Dienst</th>
+                  <th>Einsatzdatum</th>
+                  <th>Einsatzort</th>
+                  <th>Einsatzbeginn</th>
+                  <th>Einsatzende</th>
+                  <th>Patient</th>
+                  <th>Retter</th>
+                </tr>
+              </thead>
+              <tbody>
+
+{% if liste %}
+    {% for x in liste %}
+        <tr>
+            <td>{{ x.Einsatz }}</td>
+            <td>{{ x.Dienst }}</td>
+            <td>{{ x.Einsatzdatum }}</td>
+            <td>{{ x.Einsatzort }}</td>
+            <td>{{ x.Einsatzbeginn }}</td>
+            <td>{{ x.Einsatzende }}</td>
+            <td>{{ x.Patient }}</td>
+            <td>{{ x.Retter }}</td>
+        </tr>
+    {% endfor %}
+
+{% else %}
+        <tr>
+            <td>hat nicht geklappt</td>
+        </tr>
+{% endif %}
+              </tbody>
+            </table>
+          </div>
+
           </main>
       </div>
     </div>
