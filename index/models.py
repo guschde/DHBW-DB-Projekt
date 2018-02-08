@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from datetime import date
+
 class Personal(models.Model):
 	Vorname = models.CharField(max_length=50)
 	Name = models.CharField(max_length=50)
@@ -24,9 +25,6 @@ class Dienst(models.Model):
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
     Telefonnummer = models.CharField(max_length=20)
     Einsatzendezeit = models.TimeField('Einsatzende')
-   # def __str__(self):
-  #      return self.Personal_ID
-
 
 class Ansprechpartner(models.Model):
 	Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
@@ -57,37 +55,18 @@ class Patient(models.Model):
 
 class Vorfall(models.Model):
 	Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
-	Dienst = models.ForeignKey(Dienst, default='1', on_delete=models.CASCADE)
 	Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
-	Einsatzort = models.CharField(max_length = 20, default='Heidenheim', editable=True)
+	Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
 	Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
 	Einsatzende = models.TimeField('Einsatzende')
-	Patient = models.ManyToManyField(
-		Patient,
-		through='Hilfstabelle1',
-		through_fields=('Vorfall_ID', 'Patient'),
-		default='Hansl',
-	)
-	Retter = models.ManyToManyField(
-		Rettungsmittel,
-		through='Hilfstabelle3',
-		through_fields=('Vorfall_ID', 'Rettungsmittel'),
-		)
+	Dienst = models.ManyToManyField(Dienst)
+	Patienten = models.ManyToManyField(Patient)
+	Retter = models.ManyToManyField(Rettungsmittel)
 	def __str__(self):
 		return self.Einsatzort
 
-class Hilfstabelle1(models.Model):
-	Patient = models.ForeignKey(Patient, default='1', on_delete=models.CASCADE)
-	Vorfall_ID = models.ForeignKey(Vorfall, default='1', on_delete=models.CASCADE)
-	def __str__(self):
-		return self.Vorfall_ID
 
-class Hilfstabelle3(models.Model):
-	Rettungsmittel = models.ForeignKey(Rettungsmittel, default='1', on_delete=models.CASCADE)
-	Vorfall_ID = models.ForeignKey(Vorfall,default='1', on_delete=models.CASCADE)
-	Hilfstabelle2 = models.ManyToManyField(Hilfstabelle1)
-	def __str__(self):
-		return self.Vorfall_ID
+
 
 
 
