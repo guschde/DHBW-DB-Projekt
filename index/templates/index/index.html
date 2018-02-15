@@ -31,6 +31,15 @@
           <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
+{% block content %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">logout</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}
         </ul>
         <form class="form-inline mt-2 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="User">
@@ -39,6 +48,9 @@
         </form>
       </div>
     </nav>
+
+
+
 
     <div class="container-fluid">
       <div class="row">

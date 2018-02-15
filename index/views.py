@@ -12,6 +12,7 @@ from .models import Personal, Einsatz, Ansprechpartner, Vorfall, Dienst
 class IndexView(generic.ListView):
     template_name = 'index/index.html'
     context_object_name = 'listoflists'
+
     def get_queryset(self):
         listoflists=[]
         vorfalllist = Vorfall.objects.all()
