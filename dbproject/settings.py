@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dbproject.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'dbproject.urls'
@@ -74,8 +75,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dbproject.wsgi.application'
-
+WSGI_APPLICATION =  'dbproject.wsgi.application'
+# 'application' to WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -127,3 +128,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+#neu
+LOGIN_EXEMPT_URLS = (
+    '/accounts/logout/'
+)
+
+#Redirects ab hier:
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
