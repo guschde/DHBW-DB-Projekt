@@ -1,4 +1,3 @@
-
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
@@ -11,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static 'bootstrap/favicon.png' %}" />
-    <title>Einsatz-anlegen</title>
+    <title>Einsatz anlegen</title>
   </head>
 
   <body>
@@ -24,17 +23,37 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
+            <a class="nav-link" href="/ansprechpartner">Ansprechpartner</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/personal">Personal</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/rettungsmittel">Rettungsmittel</a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
+
+          {% if user.is_authenticated %}
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">logout</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
+
 
     <div class="container-fluid">
       <div class="row">
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
-            <br>
+          <br>
           <h1>Einsatz anlegen</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
@@ -42,16 +61,16 @@
               <h4>Einsatz anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/personal"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Personal anlegen</h4>
+                <a href="/dienst"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Dienst anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
                 <a href="/vorfall"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
               <h4>Vorfall berichten</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/ansprechpartner"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Ansprechpartner anlegen</h4>
+                <a href="/patient"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Patient anlegen</h4>
             </div>
           </section>
 
@@ -80,7 +99,7 @@
               <thead>
                 <tr>
                   <th>Einsatz_ID</th>
-                  <th>Personal_ID</th>
+                  <th>Einsatzleiter</th>
                   <th>Einsatzdatum</th>
                   <th>Einsatzinfo</th>
                 </tr>
@@ -99,7 +118,6 @@
 
 {% else %}
         <tr>
-            <td>hat nicht geklappt</td>
             <td>hat nicht geklappt</td>
             <td>hat nicht geklappt</td>
             <td>hat nicht geklappt</td>

@@ -23,6 +23,18 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
+            <a class="nav-link" href="/ansprechpartner">Ansprechpartner</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/personal">Personal</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/rettungsmittel">Rettungsmittel</a>
+          </li>
+
+          <li class="nav-item">
             <a class="nav-link" href="/admin">Admin</a>
           </li>
 
@@ -49,19 +61,71 @@
               <h4>Einsatz anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/personal"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Personal anlegen</h4>
+                <a href="/dienst"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Dienst anlegen</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
                 <a href="/vorfall"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
               <h4>Vorfall berichten</h4>
             </div>
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/ansprechpartner"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Ansprechpartner anlegen</h4>
+                <a href="/patient"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
+              <h4>Patient anlegen</h4>
             </div>
           </section>
+
+
 {% if listoflists %}
+    <br>
+    <h2>Patient</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Vorname</th>
+                  <th>Name</th>
+                  <th>Alter</th>
+                  <th>Geschlecht</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+                {% for x in listoflists.0 %}
+                    <tr>
+                        <td>{{ x.Vorname }}</td>
+                        <td>{{ x.Name }}</td>
+                        <td>{{ x.Alter }}</td>
+                        <td>{{ x.Geschlecht }}</td>
+                    </tr>
+                {% endfor %}
+
+
+              </tbody>
+            </table>
+          </div>
+         <br>
+         <h2>Rettungsmittel</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Bezeichnung</th>
+                  <th>PK</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for x in listoflists.1 %}
+                    <tr>
+                        <td>{{ x.Bezeichnung }}</td>
+                        <td>{{ x.id }}</td>
+                    </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </div>
     <br>
     <h2>Vorfall</h2>
         <div class="table-responsive">
@@ -79,7 +143,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for x in listoflists.0 %}
+            {% for x in listoflists.2 %}
             <tr>
                 <td>{{ x.Einsatz }}</td>
                 <td>{{ x.Dienst }}</td>
@@ -107,7 +171,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for x in listoflists.1 %}
+            {% for x in listoflists.3 %}
             <tr>
                 <td>{{ x.id }}</td>
                 <td>{{ x.Personal_ID}}</td>
@@ -118,6 +182,45 @@
         </tbody>
         </table>
         </div>
+
+<br>
+       <h2>Dienst</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>PK</th>
+                  <th>Datum</th>
+                  <th>Name</th>
+                  <th>Einsatz</th>
+                  <th>Beginnzeit</th>
+                  <th>Endzeit</th>
+                  <th>Telefonnummer</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+
+    {% for x in listoflists.4 %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.Dienstdatum }}</td>
+            <td>{{ x.Personal_ID }}</td>
+            <td>{{ x.Einsatz_ID }}</td>
+            <td>{{ x.Einsatzbeginnzeit }}</td>
+            <td>{{ x.Einsatzendezeit }}</td>
+            <td>{{ x.Telefonnummer }}</td>
+        </tr>
+    {% endfor %}
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+
     <br>
     <h2>Personal</h2>
         <div class="table-responsive">
@@ -132,7 +235,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for x in listoflists.2 %}
+            {% for x in listoflists.5 %}
             <tr>
                 <td>{{ x.Vorname }}</td>
                 <td>{{ x.Name }}</td>
@@ -160,7 +263,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for x in listoflists.3 %}
+            {% for x in listoflists.6 %}
             <tr>
                 <td>{{ x.Einsatz_ID }}</td>
                 <td>{{ x.Datum}}</td>

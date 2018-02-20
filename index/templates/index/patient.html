@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="{% static 'bootstrap/favicon.png' %}" />
-    <title>Vorfall anlegen</title>
+    <title>Patient anlegen</title>
   </head>
 
   <body>
@@ -54,7 +54,7 @@
 
         <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
           <br>
-          <h1>Vorfall berichten</h1>
+          <h1>Patient anlegen</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
                 <a href="/einsatz"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
@@ -94,32 +94,27 @@
             <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
           </div>
 
-            <h2>Vorfall</h2>
+            <h2>Patient</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>Einsatz</th>
-                  <th>Dienst</th>
-                  <th>Einsatzdatum</th>
-                  <th>Einsatzort</th>
-                  <th>Einsatzbeginn</th>
-                  <th>Einsatzende</th>
-                  <th>Retter</th>
+                  <th>Vorname</th>
+                  <th>Name</th>
+                  <th>Alter</th>
+                  <th>Geschlecht</th>
                 </tr>
               </thead>
               <tbody>
 
+
 {% if liste %}
     {% for x in liste %}
         <tr>
-            <td>{{ x.Einsatz }}</td>
-            <td>{{ x.Dienst }}</td>
-            <td>{{ x.Einsatzdatum }}</td>
-            <td>{{ x.Einsatzort }}</td>
-            <td>{{ x.Einsatzbeginn }}</td>
-            <td>{{ x.Einsatzende }}</td>
-            <td>{{ x.Retter }}</td>
+            <td>{{ x.Vorname }}</td>
+            <td>{{ x.Name }}</td>
+            <td>{{ x.Alter }}</td>
+            <td>{{ x.Geschlecht }}</td>
         </tr>
     {% endfor %}
 
