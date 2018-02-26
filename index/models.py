@@ -55,7 +55,7 @@ class Patient(models.Model):
 		return self.Vorname+' '+self.Name
 
 class Vorfall(models.Model):
-	Vorfall_ID = models.CharField(max_length=10, primary_key=True)
+	Vorfall_ID = models.CharField(max_length=10, primary_key=True, default='Primary Key eingeben')
 	Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
 	Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
 	Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
