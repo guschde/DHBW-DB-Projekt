@@ -3,7 +3,7 @@ from datetime import datetime
 from datetime import date
 
 class Personal(models.Model):
-	Personal_ID = models.CharField(max_length=10, primary_key=True)
+	Personal-ID = models.CharField(max_length=10, primary_key=True)
 	Vorname = models.CharField(max_length=50)
 	Name = models.CharField(max_length=50)
 	Führungsqualifikation = models.CharField(max_length=50)
@@ -46,7 +46,7 @@ class Rettungsmittel(models.Model):
 		return self.Bezeichnung
 
 class Patient(models.Model):
-	ID_Patient = models.CharField(max_length=10, primary_key=True)
+	ID-Patient = models.CharField(max_length=10, primary_key=True)
 	Vorname = models.CharField(max_length=20, default='Herbert')
 	Name = models.CharField(max_length=20, default='Meier')
 	Alter = models.IntegerField()
@@ -55,7 +55,7 @@ class Patient(models.Model):
 		return self.Vorname+' '+self.Name
 
 class Vorfall(models.Model):
-	Vorfall_ID = models.CharField(max_length=10, primary_key=True)
+	Vorfall-ID = models.CharField(max_length=10, primary_key=True)
 	Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
 	Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
 	Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
