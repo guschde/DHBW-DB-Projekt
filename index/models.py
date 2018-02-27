@@ -28,7 +28,7 @@ class Dienst(models.Model):
     Einsatzendezeit = models.TimeField('Einsatzende')
 
 class Ansprechpartner(models.Model):
-	Ansprechpartner_ID = models.CharField(max_length=10, primary_key=True)
+	ID_Ansprechpartner = models.CharField(max_length=10, primary_key=True)
 	Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
 	Datum = models.DateField('Datum')
 	Telefonnummer = models.CharField(max_length=20)
@@ -46,7 +46,7 @@ class Rettungsmittel(models.Model):
 		return self.Bezeichnung
 
 class Patient(models.Model):
-	Personal_ID = models.CharField(max_length=10, primary_key=True)
+	ID_Patient = models.CharField(max_length=10, primary_key=True)
 	Vorname = models.CharField(max_length=20, default='Herbert')
 	Name = models.CharField(max_length=20, default='Meier')
 	Alter = models.IntegerField()
