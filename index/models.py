@@ -32,46 +32,52 @@ class Dienst(models.Model):
     Telefonnummer = models.CharField(max_length=20)
     Einsatzendezeit = models.TimeField('Einsatzende')
 
+
 class Ansprechpartner(models.Model):
-	Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
-	Datum = models.DateField('Datum')
-	Telefonnummer = models.CharField(max_length=20)
-	Geschlecht = models.CharField(max_length=1)
-	Vorname = models.CharField(max_length=20)
-	Name = models.CharField(max_length=20)
-	Infotext = models.CharField(max_length=100)
-	def __str__(self):
-		return self.Name
+    Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
+    Datum = models.DateField('Datum')
+    Telefonnummer = models.CharField(max_length=20)
+    Geschlecht = models.CharField(max_length=1)
+    Vorname = models.CharField(max_length=20)
+    Name = models.CharField(max_length=20)
+    Infotext = models.CharField(max_length=100)
+
+    def get_absolute_url(self):
+        if self == self:
+            return ('/ansprechpartner/')
+
+    def __str__(self):
+        return self.Name
 
 class Rettungsmittel(models.Model):
-	Bezeichnung = models.CharField(max_length=30)
-	def __str__(self):
-		return self.Bezeichnung
+    Bezeichnung = models.CharField(max_length=30)
+    def __str__(self):
+        return self.Bezeichnung
 
 class Patient(models.Model):
-	Vorname = models.CharField(max_length=20, default='Herbert')
-	Name = models.CharField(max_length=20, default='Meier')
-	Alter = models.IntegerField()
-	Geschlecht = models.CharField(max_length=1)
-	def __str__(self):
-		return self.Vorname+' '+self.Name
+    Vorname = models.CharField(max_length=20, default='Herbert')
+    Name = models.CharField(max_length=20, default='Meier')
+    Alter = models.IntegerField()
+    Geschlecht = models.CharField(max_length=1)
+    def __str__(self):
+        return self.Vorname+' '+self.Name
 
 class Vorfall(models.Model):
-	Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
-	Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
-	Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
-	Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
-	Einsatzende = models.TimeField('Einsatzende')
-	Dienst = models.ManyToManyField(Dienst)
-	Retter = models.ManyToManyField(Rettungsmittel)
-	def __str__(self):
-		return self.Einsatzort
+    Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
+    Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
+    Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
+    Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
+    Einsatzende = models.TimeField('Einsatzende')
+    Dienst = models.ManyToManyField(Dienst)
+    Retter = models.ManyToManyField(Rettungsmittel)
+    def __str__(self):
+        return self.Einsatzort
 
 class Behandlung(models.Model):
-	Vorfall = models.ForeignKey(Vorfall, on_delete=models.DO_NOTHING)
-	Patient = models.ForeignKey(Patient, on_delete=models.DO_NOTHING)
-	Triagekategorie = models.IntegerField(default='1')
-	Diagnose = models.CharField(max_length=200, default='Krank')
+    Vorfall = models.ForeignKey(Vorfall, on_delete=models.DO_NOTHING)
+    Patient = models.ForeignKey(Patient, on_delete=models.DO_NOTHING)
+    Triagekategorie = models.IntegerField(default='1')
+    Diagnose = models.CharField(max_length=200, default='Krank')
 
 
 
