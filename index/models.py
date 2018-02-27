@@ -26,6 +26,7 @@ class Dienst(models.Model):
     Einsatzendezeit = models.TimeField('Einsatzende')
 
 class Ansprechpartner(models.Model):
+	Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
 	Datum = models.DateField('Datum')
 	Telefonnummer = models.CharField(max_length=20)
 	Geschlecht = models.CharField(max_length=1)
