@@ -83,17 +83,11 @@
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="date" placeholder="Password">
-            <h4>User</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Passwort</h4><input class="form-control mr-sm-2" type="password" placeholder="Password">
-          </div>
-          <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="Password">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
-            <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
+              <!-- neuer Button zum addennnnnnnnnnnnnnnnnnnnnn -->
+                <a href="/personal/add" class="btn btn-success" role="button">add</a>
           </div>
 
+            <br>
           <h2>Personal</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -104,6 +98,9 @@
                   <th>Führungsqualifikation</th>
                   <th>Bereitschaft</th>
                   <th>Qualifikation</th>
+                    <!-- Spaltenüberschriften der neuen Spalten -->
+                  <th>Update</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -117,6 +114,9 @@
             <td>{{ x.Führungsqualifikation }}</td>
             <td>{{ x.Bereitschaft }}</td>
             <td>{{ x.Qualifikation }}</td>
+            <!-- neue Spalten in der Tabelle mit Buttons zum ändern/löschen -->
+            <td><a href="/personal/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/personal/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>
     {% endfor %}
 

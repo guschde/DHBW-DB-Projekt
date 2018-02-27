@@ -1,0 +1,13 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
+
+<h2>Ansprechpartner löschen</h2>
+
+<form action="" method="post">{% csrf_token %}
+    <p>Sind Sie sicher, dass sie die Personalie "{{ object }}" löschen wollen?</p>
+    <input type="submit" class="btn btn-success" role="button" value="Ja" />
+</form>
+{% endblock %}

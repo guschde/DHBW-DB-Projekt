@@ -1,15 +1,21 @@
 from django.db import models
 from datetime import datetime
 from datetime import date
+from django.urls import reverse
 
 class Personal(models.Model):
-	Vorname = models.CharField(max_length=50)
-	Name = models.CharField(max_length=50)
-	Führungsqualifikation = models.CharField(max_length=50)
-	Bereitschaft = models.CharField(max_length=20)
-	Qualifikation = models.CharField(max_length=20)
-	def __str__(self):
-		return self.Vorname
+    Vorname = models.CharField(max_length=50)
+    Name = models.CharField(max_length=50)
+    Führungsqualifikation = models.CharField(max_length=50)
+    Bereitschaft = models.CharField(max_length=20)
+    Qualifikation = models.CharField(max_length=20)
+
+#mehr als das muss in der models.py nicht geändert werden
+    def get_absolute_url(self):
+        return ('/personal/')
+#mehr is es echt nicht xD
+    def __str__(self):
+        return self.Vorname
 
 class Einsatz(models.Model):
     Personal_ID = models.ForeignKey(Personal, on_delete=models.CASCADE)

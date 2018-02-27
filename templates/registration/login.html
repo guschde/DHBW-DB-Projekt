@@ -1,6 +1,10 @@
 <!-- templates/registration/login.html -->
+{% extends "index/layout.html" %}
 {% load static %}
+{% block main %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+
+
 <!DOCTYPE html>
 
 <html lang="en" >
@@ -30,7 +34,7 @@
 </div>
 
 </body>
-
+{% endblock %}
 
 
 
