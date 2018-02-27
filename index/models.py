@@ -3,7 +3,7 @@ from datetime import datetime
 from datetime import date
 
 class Personal(models.Model):
-	Personal_ID = models.CharField(max_length=10, primary_key=True, default='Primary Key eingeben')
+	Personal_ID = models.CharField(max_length=10, primary_key=True)
 	Vorname = models.CharField(max_length=50)
 	Name = models.CharField(max_length=50)
 	Führungsqualifikation = models.CharField(max_length=50)
@@ -28,7 +28,7 @@ class Dienst(models.Model):
     Einsatzendezeit = models.TimeField('Einsatzende')
 
 class Ansprechpartner(models.Model):
-	Ansprechpartner_ID = models.CharField(max_length=10, primary_key=True, default='Primary Key eingeben')
+	Ansprechpartner_ID = models.CharField(max_length=10, primary_key=True)
 	Einsatz_ID = models.ForeignKey(Einsatz, on_delete=models.CASCADE)
 	Datum = models.DateField('Datum')
 	Telefonnummer = models.CharField(max_length=20)
@@ -40,13 +40,13 @@ class Ansprechpartner(models.Model):
 		return self.Name
 
 class Rettungsmittel(models.Model):
-	Funkrufname = models.CharField(max_length=20, primary_key=True, default='Primary Key eingeben')
+	Funkrufname = models.CharField(max_length=20, primary_key=True)
 	Bezeichnung = models.CharField(max_length=30)
 	def __str__(self):
 		return self.Bezeichnung
 
 class Patient(models.Model):
-	Personal_ID = models.CharField(max_length=10, primary_key=True, default='Primary Key eingeben')
+	Personal_ID = models.CharField(max_length=10, primary_key=True)
 	Vorname = models.CharField(max_length=20, default='Herbert')
 	Name = models.CharField(max_length=20, default='Meier')
 	Alter = models.IntegerField()
