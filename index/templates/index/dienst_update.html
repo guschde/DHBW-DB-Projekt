@@ -1,0 +1,15 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+
+
+
+      <h2>Dienst</h2>
+
+             <form action="" method="post">{% csrf_token %}
+                 {{ form.as_p }}
+
+                 <button type="submit" class="btn btn-success">Speichern</button>
+             </form>
+{% endblock %}

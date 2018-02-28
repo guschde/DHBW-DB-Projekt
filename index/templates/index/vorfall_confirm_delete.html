@@ -1,0 +1,13 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+
+
+<h2>Vorfall löschen</h2>
+
+<form action="" method="post">{% csrf_token %}
+    <p>Sind Sie sicher, dass sie diesen Vorfall "{{ object }}" löschen wollen?</p>
+    <input type="submit" class="btn btn-success" role="button" value="Ja" />
+</form>
+{% endblock %}

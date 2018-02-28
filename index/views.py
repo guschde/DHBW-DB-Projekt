@@ -47,6 +47,22 @@ class EinsatzView(generic.ListView):
     context_object_name = 'liste'
     def get_queryset(self):
         return Einsatz.objects.all()
+    
+class EinsatzCreate(generic.CreateView):
+    template_name = 'index/einsatz_add.html'
+    context_object_name = 'form'
+    model = Einsatz
+    fields = ['Personal_ID', 'Einsatzdatum', 'Einsatzinfo']
+
+class EinsatzUpdate(generic.UpdateView):
+    model = Einsatz
+    fields = ['Personal_ID', 'Einsatzdatum', 'Einsatzinfo']
+    template_name_suffix = '_update'
+
+class EinsatzDelete(generic.DeleteView):
+    model = Einsatz
+    success_url = ('/einsatz/')
+    
 
 class DienstView(generic.ListView):
     template_name = 'index/dienst.html'
@@ -54,11 +70,46 @@ class DienstView(generic.ListView):
     def get_queryset(self):
         return Dienst.objects.all()
 
+class DienstCreate(generic.CreateView):
+    template_name = 'index/dienst_add.html'
+    context_object_name = 'form'
+    model = Dienst
+    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Telefonnummer', 'Einsatzendezeit']
+
+class DienstUpdate(generic.UpdateView):
+    model = Dienst
+    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Telefonnummer', 'Einsatzendezeit']
+    template_name_suffix = '_update'
+
+class DienstDelete(generic.DeleteView):
+    model = Dienst
+    success_url = ('/dienst/')
+    
+    
+
 class RettungsmittelView(generic.ListView):
     template_name = 'index/rettungsmittel.html'
     context_object_name = 'liste'
     def get_queryset(self):
         return Rettungsmittel.objects.all()
+    
+class RettungsmittelCreate(generic.CreateView):
+    template_name = 'index/rettungsmittel_add.html'
+    context_object_name = 'form'
+    model = Rettungsmittel
+    fields = ['Bezeichnung']
+
+class RettungsmittelUpdate(generic.UpdateView):
+    model = Rettungsmittel
+    fields = ['Bezeichnung']
+    template_name_suffix = '_update'
+
+class RettungsmittelDelete(generic.DeleteView):
+    model = Rettungsmittel
+    success_url = ('/rettungsmittel/')
+
+
+
 
 class PatientView(generic.ListView):
     template_name = 'index/patient.html'
@@ -66,6 +117,21 @@ class PatientView(generic.ListView):
     def get_queryset(self):
         return Patient.objects.all()
 
+class PatientCreate(generic.CreateView):
+    template_name = 'index/patient_add.html'
+    context_object_name = 'form'
+    model = Patient
+    fields = ['Vorname', 'Name', 'Alter', 'Geschlecht']
+
+class PatientUpdate(generic.UpdateView):
+    model = Patient
+    fields = ['Vorname', 'Name', 'Alter', 'Geschlecht']
+    template_name_suffix = '_update'
+
+class PatientDelete(generic.DeleteView):
+    model = Patient
+    success_url = ('/patient/')
+    
 
 class PersonalView(generic.ListView):
     template_name = 'index/personal.html'
@@ -97,6 +163,21 @@ class VorfallView(generic.ListView):
     context_object_name = 'liste'
     def get_queryset(self):
         return Vorfall.objects.all()
+    
+class VorfallCreate(generic.CreateView):
+    template_name = 'index/vorfall_add.html'
+    context_object_name = 'form'
+    model = Vorfall
+    fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn', 'Einsatzende', 'Retter', 'Dienst', 'Patient']
+
+class VorfallUpdate(generic.UpdateView):
+    model = Vorfall
+    fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn', 'Einsatzende', 'Retter', 'Dienst', 'Patient']
+    template_name_suffix = '_update'
+
+class VorfallDelete(generic.DeleteView):
+    model = Vorfall
+    success_url = ('/vorfall/')
 
 
 #    Ansprechpartner Block

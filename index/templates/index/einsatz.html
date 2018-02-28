@@ -83,17 +83,10 @@
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="date" placeholder="Password">
-            <h4>User</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Passwort</h4><input class="form-control mr-sm-2" type="password" placeholder="Password">
+            <a href="/einsatz/add" class="btn btn-success" role="button">add</a>
           </div>
-          <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="Password">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
-            <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
-          </div>
-                    <h2>Einsatz</h2>
+
+          <h2>Einsatz</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -102,6 +95,8 @@
                   <th>Einsatzleiter</th>
                   <th>Einsatzdatum</th>
                   <th>Einsatzinfo</th>
+                  <th>Update</th>
+                  <th>Delete</th>  
                 </tr>
               </thead>
               <tbody>
@@ -113,6 +108,8 @@
             <td>{{ x.Personal_ID}}</td>
             <td>{{ x.Einsatzdatum }}</td>
             <td>{{ x.Einsatzinfo }}</td>
+            <td><a href="/einsatz/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/einsatz/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>
     {% endfor %}
 

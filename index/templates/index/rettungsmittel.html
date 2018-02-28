@@ -83,15 +83,7 @@
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="date" placeholder="Password">
-            <h4>User</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Passwort</h4><input class="form-control mr-sm-2" type="password" placeholder="Password">
-          </div>
-          <div class="col-lg-6 portfolio-item">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="Password">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="text" placeholder="User">
-            <h4>Datum</h4><input class="form-control mr-sm-2" type="tel" placeholder="Password">
-            <h4>Absenden</h4><input class="form-control mr-sm-2" type="submit" placeholder="Password">
+            <a href="/rettungsmittel/add" class="btn btn-success" role="button">add</a>
           </div>
 
             <h2>Rettungsmittel</h2>
@@ -101,6 +93,8 @@
                 <tr>
                   <th>Bezeichnung</th>
                   <th>PK</th>
+                  <th>Update</th>
+                  <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -110,6 +104,8 @@
         <tr>
             <td>{{ x.Bezeichnung }}</td>
             <td>{{ x.id }}</td>
+            <td><a href="/rettungsmittel/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/rettungsmittel/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>
     {% endfor %}
 

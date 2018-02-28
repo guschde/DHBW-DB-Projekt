@@ -13,4 +13,30 @@ class CreateAnsprechpartner (forms.ModelForm):
     class Meta:
         model = models.Ansprechpartner
         fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Datum', 'Infotext', 'Telefonnummer']
-
+        
+class CreateEinsatz (forms.ModelForm):
+    class Meta:
+        model = models.Einsatz
+        fields = ['Personal_ID', 'Einsatzdatum', 'Einsatzinfo']
+        
+class CreateDienst (forms.ModelForm):
+    class Meta:
+        model = models.Dienst
+        fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Telefonnummer', 'Einsatzendezeit']
+        
+class CreateRettungsmittel (forms.ModelForm):
+    class Meta:
+        model = models.Rettungsmittel
+        fields = ['Bezeichnung']
+        
+class CreatePatient (forms.ModelForm):
+    class Meta:
+        model = models.Patient
+        fields = ['Vorname', 'Name', 'Alter', 'Geschlecht']
+        
+class CreateVorfall (forms.ModelForm):
+    class Meta:
+        model = models.Vorfall
+        fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn', 'Einsatzende', 'Retter', 'Dienst', 'Patient']
+        
+            

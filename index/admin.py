@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Personal, Einsatz,  Dienst, Ansprechpartner, Vorfall, Rettungsmittel, Patient, Behandlung
+from .models import Personal, Einsatz,  Dienst, Ansprechpartner, Vorfall, Rettungsmittel, Patient
 # Register your models here.
 
 class PersonalAdmin(admin.ModelAdmin):
@@ -67,14 +67,7 @@ class VorfallAdmin(admin.ModelAdmin):
 admin.site.register(Vorfall, VorfallAdmin)
 
 
-class BehandlungAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None, {'fields': ['Vorfall']}),
-        (None, {'fields': ['Patient']}),
-        (None, {'fields': ['Triagekategorie']}),
-        (None, {'fields': ['Diagnose']}),
-    ]
-admin.site.register(Behandlung, BehandlungAdmin)
+
 
 class DienstAdmin(admin.ModelAdmin):
     fieldsets = [
