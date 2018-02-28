@@ -12,10 +12,11 @@ class Personal(models.Model):
 
 #mehr als das muss in der models.py nicht geändert werden
     def get_absolute_url(self):
-        return ('/personal/')
+        if self == self:
+            return ('/personal/')
 #mehr is es echt nicht xD
     def __str__(self):
-        return self.Vorname
+        return self.Vorname+' '+self.Name
 
 class Einsatz(models.Model):
     Personal_ID = models.ForeignKey(Personal, on_delete=models.CASCADE)
@@ -43,15 +44,15 @@ class Dienst(models.Model):
             return ('/dienst/')
 
     def __str__(self):
-        return self.Telefonnummer
-
+        return str(self.Personal_ID)
 
 
 class Ansprechpartner(models.Model):
-    Einsatz_ID = models.ForeignKey(Einsatz, default = 'Einsatz', on_delete=models.CASCADE)
+    sex = (('w', 'W'), ('m', 'M'))
+    Einsatz_ID = models.ForeignKey(Einsatz, default='Einsatz', on_delete=models.CASCADE)
     Datum = models.DateField('Datum')
     Telefonnummer = models.CharField(max_length=20)
-    Geschlecht = models.CharField(max_length=1)
+    Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
     Vorname = models.CharField(max_length=20)
     Name = models.CharField(max_length=20)
     Infotext = models.CharField(max_length=100)
@@ -61,7 +62,7 @@ class Ansprechpartner(models.Model):
             return ('/ansprechpartner/')
 
     def __str__(self):
-        return self.Name
+        return self.Vorname+' '+self.Name
 
 class Rettungsmittel(models.Model):
     Bezeichnung = models.CharField(max_length=30)
@@ -74,10 +75,11 @@ class Rettungsmittel(models.Model):
         return self.Bezeichnung
 
 class Patient(models.Model):
-    Vorname = models.CharField(max_length=20, default='Herbert')
-    Name = models.CharField(max_length=20, default='Meier')
-    Alter = models.IntegerField()
-    Geschlecht = models.CharField(max_length=1)
+    sex = (('w', 'W'), ('m', 'M'))
+    Vorname = models.CharField(max_length=20, default='Patientin')
+    Name = models.CharField(max_length=20, default='Musterfrau')
+    Alter = models.IntegerField(default='1')
+    Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
     def __str__(self):
         return self.Vorname+' '+self.Name
     
@@ -86,29 +88,30 @@ class Patient(models.Model):
         if self == self:
             return ('/patient/')
 
-    
+
 
 class Vorfall(models.Model):
+    triag = (('leichte Verletzungen', 'LEICHTE VERLETZUNGEN'),
+        ('mittlere Verletzungen', 'MITTLERE VERLETZUNGEN'),
+        ('schwere Verletzungen', 'SCHWERE VERLETZUNGEN'),
+    )
     Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
     Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
-    Einsatzort = models.CharField(max_length = 50, default='Heidenheim', editable=True)
+    Einsatzort = models.CharField(max_length=50, default='Heidenheim', editable=True)
     Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
     Einsatzende = models.TimeField('Einsatzende')
+    Triagekategorie = models.CharField('Triagekategorie', max_length=21, default='LEICHTE VERLETZUNGEN', choices=triag)
     Dienst = models.ManyToManyField(Dienst)
     Retter = models.ManyToManyField(Rettungsmittel)
     Patient = models.ManyToManyField(Patient)
 
     def __str__(self):
         return self.Einsatzort
-    
-    
+
     def get_absolute_url(self):
         if self == self:
             return ('/vorfall/')
 
-
-
- # ggf auch url für behandlung?!
 
 
 

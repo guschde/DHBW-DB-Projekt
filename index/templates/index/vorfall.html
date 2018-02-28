@@ -79,25 +79,24 @@
     </div>
 
      <div class="container">
-      <h2>Eingabefelder</h2>
+       <h2>Vorfall</h2>
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
             <a href="/vorfall/add" class="btn btn-success" role="button">add</a>
           </div>
 
-            <h2>Vorfall</h2>
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Einsatz</th>
-                  <th>Dienst</th>
                   <th>Einsatzdatum</th>
                   <th>Einsatzort</th>
                   <th>Einsatzbeginn</th>
                   <th>Einsatzende</th>
-                  <th>Retter</th>
+                  <th>Triagekategorie</th>
                   <th>Update</th>
                   <th>Delete</th>
                 </tr>
@@ -107,13 +106,12 @@
 {% if liste %}
     {% for x in liste %}
         <tr>
-            <td>{{ x.Einsatz }}</td>
-            <td>{{ x.Dienst }}</td>
+            <td><a href="/vorfall/det/{{ x.id }}" class="btn btn-primary" role="button">{{ x.Einsatz }}</a></td>
             <td>{{ x.Einsatzdatum }}</td>
             <td>{{ x.Einsatzort }}</td>
             <td>{{ x.Einsatzbeginn }}</td>
             <td>{{ x.Einsatzende }}</td>
-            <td>{{ x.Retter }}</td>
+            <td>{{ x.Triagekategorie }}</td>
             <td><a href="/vorfall/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
             <td><a href="/vorfall/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>

@@ -79,20 +79,19 @@
     </div>
 
      <div class="container">
-      <h2>Eingabefelder</h2>
+      <h2>Rettungsmittel</h2>
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
             <a href="/rettungsmittel/add" class="btn btn-success" role="button">add</a>
           </div>
 
-            <h2>Rettungsmittel</h2>
+
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
                 <tr>
                   <th>Bezeichnung</th>
-                  <th>PK</th>
                   <th>Update</th>
                   <th>Delete</th>
                 </tr>
@@ -103,7 +102,6 @@
     {% for x in liste %}
         <tr>
             <td>{{ x.Bezeichnung }}</td>
-            <td>{{ x.id }}</td>
             <td><a href="/rettungsmittel/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
             <td><a href="/rettungsmittel/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>

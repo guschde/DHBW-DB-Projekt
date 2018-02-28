@@ -24,15 +24,16 @@ urlpatterns = [
     path('patient/del/<int:pk>/', views.PatientDelete.as_view(), name='patient-delete'),
     path('vorfall/', views.VorfallView.as_view(), name='vorfall'),
     path('vorfall/add', views.VorfallCreate.as_view(), name='vorfall-create'),
+    path('vorfall/det/<int:pk>/', views.VorfallDetailView.as_view(), name='vorfall-detail'),
     path('vorfall/upd/<int:pk>/', views.VorfallUpdate.as_view(), name='vorfall-update'),
     path('vorfall/del/<int:pk>/', views.VorfallDelete.as_view(), name='vorfall-delete'),
     path('personal/', views.PersonalView.as_view(), name='personal'),
     path('personal/add', views.PersonalCreate.as_view(), name='personal-create'),
     path('personal/upd/<int:pk>/', views.PersonalUpdate.as_view(), name='personal-update'),
     path('personal/del/<int:pk>/', views.PersonalDelete.as_view(), name='personal-delete'),
+    path('ansprechpartner/', views.AnsprechpartnerView.as_view(), name='ansprechpartner'),
     path('ansprechpartner/add', views.AnsprechpartnerCreate.as_view(), name='ansprechpartner-create'),
     path('ansprechpartner/upd/<int:pk>/', views.AnsprechpartnerUpdate.as_view(), name='ansprechpartner-update'),
     path('ansprechpartner/del/<int:pk>/', views.AnsprechpartnerDelete.as_view(), name='ansprechpartner-delete'),
-    path('ansprechpartner/', views.AnsprechpartnerView.as_view(), name='ansprechpartner'),
 ]
 

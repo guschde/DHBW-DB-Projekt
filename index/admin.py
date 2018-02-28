@@ -58,6 +58,7 @@ class VorfallAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['Einsatz']}),
         (None, {'fields': ['Dienst']}),
+        (None, {'fields': ['Patient']}),
         (None, {'fields': ['Einsatzdatum']}),
         (None, {'fields': ['Einsatzort']}),
         (None, {'fields': ['Einsatzbeginn']}),

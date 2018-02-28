@@ -1,0 +1,25 @@
+{% extends "index/layout.html" %}
+{% load static %}
+{% block main %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+
+<h1>Vorfall {{ object.id }}</h1>
+
+<h2>Triagekategorie:</h2><p> {{ object.Triagekategorie }}</p>
+
+<h2>Rettungsmittel: </h2>
+    {% for x in object.Retter.all %}
+<p>{{ x }}</p>
+    {% endfor %}
+
+<h2>Diensthabende: </h2>
+    {% for x in object.Dienst.all %}
+<p>{{ x }}</p>
+    {% endfor %}
+
+<h2>Patienten: </h2>
+    {% for x in object.Patient.all %}
+<p>{{ x }}</p>
+    {% endfor %}
+
+{% endblock %}
