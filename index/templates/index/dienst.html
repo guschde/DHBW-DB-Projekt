@@ -97,7 +97,7 @@
                   <th>Einsatz</th>
                   <th>Beginnzeit</th>
                   <th>Endzeit</th>
-                  <th>Telefonnummer</th>
+                  <th>Funkrufname</th>
                   <th>Update</th>
                   <th>Delete</th>                  
                 </tr>
@@ -114,7 +114,7 @@
             <td>{{ x.Einsatz_ID }}</td>
             <td>{{ x.Einsatzbeginnzeit }}</td>
             <td>{{ x.Einsatzendezeit }}</td>
-            <td>{{ x.Telefonnummer }}</td>
+            <td>{{ x.Funkrufname }}</td>
             <td><a href="/dienst/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
             <td><a href="/dienst/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
         </tr>
