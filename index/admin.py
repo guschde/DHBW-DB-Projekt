@@ -77,6 +77,6 @@ class DienstAdmin(admin.ModelAdmin):
         (None, {'fields': ['Einsatz_ID']}),
         (None, {'fields': ['Einsatzbeginnzeit']}),
         (None, {'fields': ['Einsatzendezeit']}),
-        (None, {'fields': ['Telefonnummer']}),
+        (None, {'fields': ['Funkrufname']}),
     ]
 admin.site.register(Dienst, DienstAdmin)
