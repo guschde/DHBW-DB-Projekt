@@ -99,11 +99,11 @@ class Vorfall(models.Model):
     Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
     Einsatzort = models.CharField(max_length=50, default='Heidenheim', editable=True)
     Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
-    Einsatzende = models.TimeField('Einsatzende')
+    Einsatzende = models.TimeField('Einsatzende', blank=True, null=True)
     Triagekategorie = models.CharField('Triagekategorie', max_length=21, default='LEICHTE VERLETZUNGEN', choices=triag)
     Dienst = models.ManyToManyField(Dienst)
     Retter = models.ManyToManyField(Rettungsmittel)
-    Patient = models.ManyToManyField(Patient)
+    Patient = models.ManyToManyField(Patient, blank=True, null=True)
 
     def __str__(self):
         return self.Einsatzort
