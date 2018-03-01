@@ -36,7 +36,7 @@ class Dienst(models.Model):
     Personal_ID = models.ForeignKey(Personal, default="Gruppenführer", on_delete=models.DO_NOTHING)
     Einsatz_ID = models.ForeignKey(Einsatz, default="Einsatz", on_delete=models.DO_NOTHING)
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
-    Telefonnummer = models.CharField(max_length=20)
+    Funkrufname = models.CharField(max_length=20)
     Einsatzendezeit = models.TimeField('Einsatzende',  blank=True, null=True, default= "00:00:00")
     
     def get_absolute_url(self):
@@ -103,7 +103,7 @@ class Vorfall(models.Model):
     Triagekategorie = models.CharField('Triagekategorie', max_length=21, default='LEICHTE VERLETZUNGEN', choices=triag)
     Dienst = models.ManyToManyField(Dienst)
     Retter = models.ManyToManyField(Rettungsmittel)
-    Patient = models.ManyToManyField(Patient, blank=True, null=True)
+    Patient = models.ManyToManyField(Patient, blank=True)
 
     def __str__(self):
         return self.Einsatzort

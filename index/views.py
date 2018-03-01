@@ -74,11 +74,11 @@ class DienstCreate(generic.CreateView):
     template_name = 'index/dienst_add.html'
     context_object_name = 'form'
     model = Dienst
-    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit',  'Telefonnummer']
+    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit',  'Funkrufname']
 
 class DienstUpdate(generic.UpdateView):
     model = Dienst
-    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Telefonnummer']
+    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
     template_name_suffix = '_update'
 
 class DienstDelete(generic.DeleteView):

@@ -22,7 +22,7 @@ class CreateEinsatz (forms.ModelForm):
 class CreateDienst (forms.ModelForm):
     class Meta:
         model = models.Dienst
-        fields = ['Einsatz_ID', 'Personal_ID', 'Dienstdatum', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Telefonnummer']
+        fields = ['Einsatz_ID', 'Personal_ID', 'Dienstdatum', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
         
 class CreateRettungsmittel (forms.ModelForm):
     class Meta:
