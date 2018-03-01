@@ -9,5 +9,6 @@
 <form action="" method="post">{% csrf_token %}
     <p>Sind Sie sicher, dass sie diesen Einsatz "{{ object }}" löschen wollen?</p>
     <input type="submit" class="btn btn-success" role="button" value="Ja" />
+    <a href="/einsatz/" class="btn btn-danger" role="button">abbrechen</a>
 </form>
 {% endblock %}
