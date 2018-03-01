@@ -9,5 +9,6 @@
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-success">Speichern</button>
+      <a href="/personal/" class="btn btn-danger" role="button">abbrechen</a>
 </form>
 {% endblock %}
