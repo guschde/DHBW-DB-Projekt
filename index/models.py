@@ -50,7 +50,7 @@ class Dienst(models.Model):
 class Ansprechpartner(models.Model):
     sex = (('w', 'W'), ('m', 'M'))
     Einsatz_ID = models.ForeignKey(Einsatz, default='Einsatz', on_delete=models.CASCADE)
-    Datum = models.DateField('Datum')
+    Datum = models.DateField('Datum', default=date.today)
     Telefonnummer = models.CharField(max_length=20)
     Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
     Vorname = models.CharField(max_length=20)
