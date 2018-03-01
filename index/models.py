@@ -37,7 +37,7 @@ class Dienst(models.Model):
     Einsatz_ID = models.ForeignKey(Einsatz, default="Einsatz", on_delete=models.DO_NOTHING)
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
     Telefonnummer = models.CharField(max_length=20)
-    Einsatzendezeit = models.TimeField('Einsatzende',  blank=True, null=True)
+    Einsatzendezeit = models.TimeField('Einsatzende',  blank=True, null=True, default= "00:00:00")
     
     def get_absolute_url(self):
         if self == self:
@@ -99,7 +99,7 @@ class Vorfall(models.Model):
     Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
     Einsatzort = models.CharField(max_length=50, default='Heidenheim', editable=True)
     Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
-    Einsatzende = models.TimeField('Einsatzende', blank=True, null=True)
+    Einsatzende = models.TimeField('Einsatzende', blank=True, null=True, default= "00:00:00")
     Triagekategorie = models.CharField('Triagekategorie', max_length=21, default='LEICHTE VERLETZUNGEN', choices=triag)
     Dienst = models.ManyToManyField(Dienst)
     Retter = models.ManyToManyField(Rettungsmittel)
