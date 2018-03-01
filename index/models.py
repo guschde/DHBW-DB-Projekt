@@ -37,7 +37,7 @@ class Dienst(models.Model):
     Einsatz_ID = models.ForeignKey(Einsatz, default="Einsatz", on_delete=models.DO_NOTHING)
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
     Telefonnummer = models.CharField(max_length=20)
-    Einsatzendezeit = models.TimeField('Einsatzende')
+    Einsatzendezeit = models.TimeField('Einsatzende',  blank=True, null=True)
     
     def get_absolute_url(self):
         if self == self:
