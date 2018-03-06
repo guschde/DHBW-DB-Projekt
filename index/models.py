@@ -33,8 +33,8 @@ class Einsatz(models.Model):
 
 class Dienst(models.Model):
     Dienstdatum = models.DateField('Dienstdatum', default=date.today)
-    Personal_ID = models.ForeignKey(Personal, default="Gruppenführer", on_delete=models.DO_NOTHING)
-    Einsatz_ID = models.ForeignKey(Einsatz, default="Einsatz", on_delete=models.DO_NOTHING)
+    Personal_ID = models.ForeignKey(Personal, default="1", on_delete=models.DO_NOTHING)
+    Einsatz_ID = models.ForeignKey(Einsatz, default="1", on_delete=models.DO_NOTHING)
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
     Funkrufname = models.CharField(max_length=20)
     Einsatzendezeit = models.TimeField('Einsatzende',  blank=True, null=True, default= "00:00:00")
@@ -49,7 +49,7 @@ class Dienst(models.Model):
 
 class Ansprechpartner(models.Model):
     sex = (('w', 'W'), ('m', 'M'))
-    Einsatz_ID = models.ForeignKey(Einsatz, default='Einsatz', on_delete=models.CASCADE)
+    Einsatz_ID = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
     Datum = models.DateField('Datum', default=date.today)
     Telefonnummer = models.CharField(max_length=20)
     Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
