@@ -105,27 +105,7 @@
             </table>
           </div>
          <br>
-         <h2>Rettungsmittel</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Bezeichnung</th>
-                  <th>PK</th>
-                </tr>
-              </thead>
-              <tbody>
-
-                {% for x in listoflists.1 %}
-                    <tr>
-                        <td>{{ x.Bezeichnung }}</td>
-                        <td>{{ x.id }}</td>
-                    </tr>
-                {% endfor %}
-
-              </tbody>
-            </table>
-          </div>
+         
     <br>
     <h2>Vorfall</h2>
         <div class="table-responsive">
@@ -219,70 +199,6 @@
             </table>
           </div>
 
-
-
-    <br>
-    <h2>Personal</h2>
-        <div class="table-responsive">
-        <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Vorname</th>
-                <th>Name</th>
-                <th>Führungsqualifikation</th>
-                <th>Bereitschaft</th>
-                <th>Qualifikation</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for x in listoflists.5 %}
-            <tr>
-                <td>{{ x.Vorname }}</td>
-                <td>{{ x.Name }}</td>
-                <td>{{ x.Führungsqualifikation }}</td>
-                <td>{{ x.Bereitschaft }}</td>
-                <td>{{ x.Qualifikation }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        </div>
-    <br>
-    <h2>Ansprechpartner</h2>
-        <div class="table-responsive">
-        <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Einsatz_ID</th>
-                <th>Datum</th>
-                <th>Telefonnummer</th>
-                <th>Geschlecht</th>
-                <th>Vorname</th>
-                <th>Name</th>
-                <th>Infotext</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for x in listoflists.6 %}
-            <tr>
-                <td>{{ x.Einsatz_ID }}</td>
-                <td>{{ x.Datum}}</td>
-                <td>{{ x.Telefonnummer }}</td>
-                <td>{{ x.Geschlecht }}</td>
-                <td>{{ x.Vorname }}</td>
-                <td>{{ x.Name }}</td>
-                <td>{{ x.Infotext }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-        </table>
-        </div>
-{% else %}
-        <H1>hier gab es einen Fehler</H1>
-{% endif %}
-        </main>
-      </div>
-    </div>
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
