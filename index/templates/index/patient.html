@@ -82,8 +82,8 @@
       <h2>Patient</h2>
          <div class="row">
 
-          <div class="col-lg-6 portfolio-item">
-            <a href="/patient/add" class="btn btn-success" role="button">add</a>  
+          <div class="col-lg-6 portfolio-item pb-2">
+            <a href="/patient/add" class="btn btn-success" role="button">Hinzufügen</a>
           </div>
 
 
@@ -95,8 +95,8 @@
                   <th>Name</th>
                   <th>Alter</th>
                   <th>Geschlecht</th>
-                  <th>Update</th>
-                  <th>Delete</th>
+                  <th>Ändern</th>
+                  <th>Löschen</th>
                 </tr>
               </thead>
               <tbody>
@@ -109,14 +109,14 @@
             <td>{{ x.Name }}</td>
             <td>{{ x.Alter }}</td>
             <td>{{ x.Geschlecht }}</td>
-            <td><a href="/patient/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
-            <td><a href="/patient/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            <td><a href="/patient/upd/{{ x.id }}" class="btn btn-warning" role="button">Ändern</a></td>
+            <td><a href="/patient/del/{{ x.id }}" class="btn btn-danger" role="button">Löschen</a></td>
         </tr>
     {% endfor %}
 
 {% else %}
         <tr>
-            <td>hat nicht geklappt</td>
+            <td>Hat leider nicht funktioniert</td>
         </tr>
 {% endif %}
               </tbody>
