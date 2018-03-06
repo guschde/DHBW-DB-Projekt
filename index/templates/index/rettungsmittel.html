@@ -78,12 +78,12 @@
       </div>
     </div>
 
-     <div class="container">
+     <div class="container col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
       <h2>Rettungsmittel</h2>
          <div class="row">
 
-          <div class="col-lg-6 portfolio-item">
-            <a href="/rettungsmittel/add" class="btn btn-success" role="button">add</a>
+          <div class="col-lg-2 portfolio-item pb-2">
+            <a href="/rettungsmittel/add" class="btn btn-success btn-block" role="button">Hinzufügen</a>
           </div>
 
 
@@ -92,8 +92,8 @@
               <thead>
                 <tr>
                   <th>Bezeichnung</th>
-                  <th>Update</th>
-                  <th>Delete</th>
+                  <th>Ändern</th>
+                  <th>Löschen</th>
                 </tr>
               </thead>
               <tbody>
@@ -102,14 +102,14 @@
     {% for x in liste %}
         <tr>
             <td>{{ x.Bezeichnung }}</td>
-            <td><a href="/rettungsmittel/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
-            <td><a href="/rettungsmittel/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            <td><a href="/rettungsmittel/upd/{{ x.id }}" class="btn btn-warning" role="button">Ändern</a></td>
+            <td><a href="/rettungsmittel/del/{{ x.id }}" class="btn btn-danger" role="button">Löschen</a></td>
         </tr>
     {% endfor %}
 
 {% else %}
         <tr>
-            <td>hat nicht geklappt</td>
+            <td>Hat leider nicht funktioniert</td>
         </tr>
 {% endif %}
               </tbody>
