@@ -112,27 +112,23 @@
         <table class="table table-striped">
         <thead>
             <tr>
-                <th>Einsatz</th>
-                <th>Dienst</th>
-                <th>Einsatzdatum</th>
-                <th>Einsatzort</th>
-                <th>Einsatzbeginn</th>
-                <th>Einsatzende</th>
-                <th>Patient</th>
-                <th>Retter</th>
+                <th>Vorfall</th>
+                  <th>Einsatz</th>
+                  <th>Einsatzort</th>
+                  <th>Einsatzbeginn</th>
+                  <th>Einsatzende</th>
+                  <th>Triagekategorie</th>
             </tr>
         </thead>
         <tbody>
             {% for x in listoflists.2 %}
             <tr>
-                <td>{{ x.Einsatz }}</td>
-                <td>{{ x.Dienst }}</td>
-                <td>{{ x.Einsatzdatum }}</td>
-                <td>{{ x.Einsatzort }}</td>
-                <td>{{ x.Einsatzbeginn }}</td>
-                <td>{{ x.Einsatzende }}</td>
-                <td>{{ x.Patienten }}</td>
-                <td>{{ x.Retter }}</td>
+            <td><a href="/vorfall/det/{{ x.id }}" class="btn btn-primary" role="button">{{ x.id }}</a></td>
+            <td>{{ x.Einsatz }}</td>
+            <td>{{ x.Einsatzort }}</td>
+            <td>{{ x.Einsatzbeginn }}</td>
+            <td>{{ x.Einsatzende }}</td>
+            <td>{{ x.Triagekategorie }}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -144,8 +140,8 @@
         <table class="table table-striped">
         <thead>
             <tr>
-                <th>Einsatz_ID</th>
-                <th>Personal_ID</th>
+                <th>Einsatz</th>
+                <th>Einsatzleiter</th>
                 <th>Einsatzdatum</th>
                 <th>Einsatzinfo</th>
             </tr>
@@ -170,12 +166,11 @@
               <thead>
                 <tr>
                   <th>PK</th>
-                  <th>Datum</th>
                   <th>Name</th>
                   <th>Einsatz</th>
+                  <th>Funkrufname</th>
                   <th>Beginnzeit</th>
                   <th>Endzeit</th>
-                  <th>Funkrufname</th>
                 </tr>
               </thead>
               <tbody>
@@ -185,12 +180,11 @@
     {% for x in listoflists.4 %}
         <tr>
             <td>{{ x.id }}</td>
-            <td>{{ x.Dienstdatum }}</td>
             <td>{{ x.Personal_ID }}</td>
             <td>{{ x.Einsatz_ID }}</td>
+            <td>{{ x.Funkrufname }}</td>
             <td>{{ x.Einsatzbeginnzeit }}</td>
             <td>{{ x.Einsatzendezeit }}</td>
-            <td>{{ x.Funkrufname }}</td>
         </tr>
     {% endfor %}
 {% endif %}
@@ -198,7 +192,7 @@
               </tbody>
             </table>
           </div>
-
+        </main>
     <!-- ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

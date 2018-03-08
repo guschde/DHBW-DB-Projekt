@@ -74,11 +74,11 @@ class DienstCreate(generic.CreateView):
     template_name = 'index/dienst_add.html'
     context_object_name = 'form'
     model = Dienst
-    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit',  'Funkrufname']
+    fields = ['Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit',  'Funkrufname']
 
 class DienstUpdate(generic.UpdateView):
     model = Dienst
-    fields = ['Dienstdatum', 'Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
+    fields = ['Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
     template_name_suffix = '_update'
 
 class DienstDelete(generic.DeleteView):
@@ -176,12 +176,12 @@ class VorfallCreate(generic.CreateView):
     template_name = 'index/vorfall_add.html'
     context_object_name = 'form'
     model = Vorfall
-    fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn',
+    fields = ['Einsatz', 'Einsatzort', 'Einsatzbeginn',
                   'Einsatzende', 'Triagekategorie', 'Retter', 'Dienst', 'Patient']
 
 class VorfallUpdate(generic.UpdateView):
     model = Vorfall
-    fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn',
+    fields = ['Einsatz', 'Einsatzort', 'Einsatzbeginn',
                   'Einsatzende', 'Triagekategorie', 'Retter', 'Dienst', 'Patient']
     template_name_suffix = '_update'
 
@@ -202,11 +202,11 @@ class AnsprechpartnerCreate(generic.CreateView):
     template_name = 'index/ansprechpartner_add.html'
     context_object_name = 'form'
     model = Ansprechpartner
-    fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Datum', 'Infotext', 'Telefonnummer']
+    fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Infotext', 'Telefonnummer']
 
 class AnsprechpartnerUpdate(generic.UpdateView):
     model = Ansprechpartner
-    fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Datum', 'Infotext', 'Telefonnummer']
+    fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Infotext', 'Telefonnummer']
     template_name_suffix = '_update'
 
 class AnsprechpartnerDelete(generic.DeleteView):

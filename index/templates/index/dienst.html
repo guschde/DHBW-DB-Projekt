@@ -83,7 +83,11 @@
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
+            {% if  perms.index.add_dienst %}
             <a href="/dienst/add" class="btn btn-success" role="button">Hinzufügen</a>
+            {% else %}
+            <button class="btn btn-secondary">Hinzufügen</button>
+            {% endif %}
           </div>
 
 
@@ -92,12 +96,11 @@
               <thead>
                 <tr>
                   <th>PK</th>
-                  <th>Datum</th>
                   <th>Name</th>
                   <th>Einsatz</th>
+                  <th>Funkrufname</th>
                   <th>Beginnzeit</th>
                   <th>Endzeit</th>
-                  <th>Funkrufname</th>
                   <th>Ändern</th>
                   <th>Löschen</th>
                 </tr>
@@ -109,14 +112,21 @@
     {% for x in liste %}
         <tr>
             <td>{{ x.id }}</td>
-            <td>{{ x.Dienstdatum }}</td>
             <td>{{ x.Personal_ID }}</td>
             <td>{{ x.Einsatz_ID }}</td>
+            <td>{{ x.Funkrufname }}</td>
             <td>{{ x.Einsatzbeginnzeit }}</td>
             <td>{{ x.Einsatzendezeit }}</td>
-            <td>{{ x.Funkrufname }}</td>
+            {% if  perms.index.change_dienst %}
             <td><a href="/dienst/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
+            {% if perms.index.delete_dienst %}
             <td><a href="/dienst/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
         </tr>
     {% endfor %}
 

@@ -32,7 +32,7 @@ class Einsatz(models.Model):
 
 
 class Dienst(models.Model):
-    Dienstdatum = models.DateField('Dienstdatum', default=date.today)
+#   Dienstdatum = models.DateField('Dienstdatum', default=date.today)
     Personal_ID = models.ForeignKey(Personal, default="1", on_delete=models.DO_NOTHING)
     Einsatz_ID = models.ForeignKey(Einsatz, default="1", on_delete=models.DO_NOTHING)
     Einsatzbeginnzeit = models.TimeField('Einsatzbeginn')
@@ -50,7 +50,7 @@ class Dienst(models.Model):
 class Ansprechpartner(models.Model):
     sex = (('w', 'W'), ('m', 'M'))
     Einsatz_ID = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
-    Datum = models.DateField('Datum', default=date.today)
+#    Datum = models.DateField('Datum', default=date.today)
     Telefonnummer = models.CharField(max_length=20)
     Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
     Vorname = models.CharField(max_length=20)
@@ -96,7 +96,7 @@ class Vorfall(models.Model):
         ('schwere Verletzungen', 'SCHWERE VERLETZUNGEN'),
     )
     Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
-    Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
+#    Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
     Einsatzort = models.CharField(max_length=50, default='Heidenheim', editable=True)
     Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
     Einsatzende = models.TimeField('Einsatzende', blank=True, null=True, default= "00:00:00")

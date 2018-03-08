@@ -83,7 +83,11 @@
          <div class="row">
 
           <div class="col-lg-6 portfolio-item">
+            {% if  perms.index.add_einsatz %}
             <a href="/einsatz/add" class="btn btn-success" role="button">Hinzufügen</a>
+            {% else %}
+            <button class="btn btn-secondary">Hinzufügen</button>
+            {% endif %}
           </div>
 
 
@@ -108,8 +112,16 @@
             <td>{{ x.Personal_ID}}</td>
             <td>{{ x.Einsatzdatum }}</td>
             <td>{{ x.Einsatzinfo }}</td>
+            {% if perms.index.change_einsatz %}
             <td><a href="/einsatz/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
+            {% if perms.index.delete_einsatz %}
             <td><a href="/einsatz/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
         </tr>
     {% endfor %}
 

@@ -6,11 +6,14 @@
 
 
       <h2>Patient</h2>
-
+{% if perms.index.change_patient %}
              <form action="" method="post">{% csrf_token %}
                  {{ form.as_p }}
 
                  <button type="submit" class="btn btn-success">Speichern</button>
                  <a href="/patient/" class="btn btn-danger" role="button">abbrechen</a>
              </form>
+{% else %}
+ <h2>Sie verfügen nicht über ausreichende Berechtigungen</h2>
+{% endif %}
 {% endblock %}
