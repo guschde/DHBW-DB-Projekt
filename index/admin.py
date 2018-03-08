@@ -42,7 +42,6 @@ admin.site.register(Einsatz, EinsatzAdmin)
 class AnsprechpartnerAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ['Einsatz_ID']}),
-        (None, {'fields': ['Datum']}),
         (None, {'fields': ['Telefonnummer']}),
         (None, {'fields': ['Geschlecht']}),
         (None, {'fields': ['Vorname']}),
@@ -59,7 +58,6 @@ class VorfallAdmin(admin.ModelAdmin):
         (None, {'fields': ['Einsatz']}),
         (None, {'fields': ['Dienst']}),
         (None, {'fields': ['Patient']}),
-        (None, {'fields': ['Einsatzdatum']}),
         (None, {'fields': ['Einsatzort']}),
         (None, {'fields': ['Einsatzbeginn']}),
         (None, {'fields': ['Einsatzende']}),
@@ -72,7 +70,6 @@ admin.site.register(Vorfall, VorfallAdmin)
 
 class DienstAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['Dienstdatum']}),
         (None, {'fields': ['Personal_ID']}),
         (None, {'fields': ['Einsatz_ID']}),
         (None, {'fields': ['Einsatzbeginnzeit']}),

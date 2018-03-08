@@ -12,7 +12,7 @@ class CreatePersonal (forms.ModelForm):
 class CreateAnsprechpartner (forms.ModelForm):
     class Meta:
         model = models.Ansprechpartner
-        fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Datum', 'Infotext', 'Telefonnummer']
+        fields = ['Einsatz_ID', 'Vorname', 'Name', 'Geschlecht', 'Infotext', 'Telefonnummer']
         
 class CreateEinsatz (forms.ModelForm):
     class Meta:
@@ -22,7 +22,7 @@ class CreateEinsatz (forms.ModelForm):
 class CreateDienst (forms.ModelForm):
     class Meta:
         model = models.Dienst
-        fields = ['Einsatz_ID', 'Personal_ID', 'Dienstdatum', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
+        fields = ['Einsatz_ID', 'Personal_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
         
 class CreateRettungsmittel (forms.ModelForm):
     class Meta:
@@ -37,6 +37,5 @@ class CreatePatient (forms.ModelForm):
 class CreateVorfall (forms.ModelForm):
     class Meta:
         model = models.Vorfall
-        fields = ['Einsatz', 'Einsatzdatum', 'Einsatzort', 'Einsatzbeginn',
-                  'Einsatzende', 'Triagekategorie', 'Retter', 'Dienst', 'Patient']
+        fields = ['Einsatz', 'Einsatzort', 'Einsatzbeginn', 'Einsatzende', 'Triagekategorie', 'Retter', 'Dienst', 'Patient']
 

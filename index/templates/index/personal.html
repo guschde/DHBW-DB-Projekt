@@ -84,7 +84,11 @@
 
           <div class="col-lg-2 portfolio-item pb-2">
               <!-- neuer Button zum addennnnnnnnnnnnnnnnnnnnnn -->
-                <a href="/personal/add" class="btn btn-success btn-block" role="button">Hinzufügen</a>
+            {% if  perms.index.add_personal %}
+            <a href="/personal/add" class="btn btn-success btn-block" role="button">Hinzufügen</a>
+            {% else %}
+            <button class="btn btn-secondary">Hinzufügen</button>
+            {% endif %}
           </div>
 
             <br>
@@ -115,8 +119,16 @@
             <td>{{ x.Bereitschaft }}</td>
             <td>{{ x.Qualifikation }}</td>
             <!-- neue Spalten in der Tabelle mit Buttons zum ändern/löschen -->
+            {% if  perms.index.change_personal %}
             <td><a href="/personal/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
+            {% if perms.index.delete_personal %}
             <td><a href="/personal/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            {% else %}
+            <td><button class="btn btn-secondary">ändern</button> </td>
+            {% endif %}
         </tr>
     {% endfor %}
 

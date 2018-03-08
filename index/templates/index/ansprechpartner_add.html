@@ -3,12 +3,15 @@
 {% block main %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
 
-
 <h2>Ansprechpartner</h2>
+{% if perms.index.add_ansprechpartner %}
 <form class="site-form" action=" " method ="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit" class="btn btn-success">Speichern</button>
       <a href="/ansprechpartner/" class="btn btn-danger" role="button">abbrechen</a>
 </form>
+{% else %}
+ <h2>Sie verfügen nicht über ausreichende Berechtigungen</h2>
+{% endif %}
 {% endblock %}

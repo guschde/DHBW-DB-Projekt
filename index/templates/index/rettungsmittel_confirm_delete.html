@@ -5,10 +5,13 @@
 
 
 <h2>Rettungsmittel löschen</h2>
-
+{% if perms.index.delete_rettungsmittel %}
 <form action="" method="post">{% csrf_token %}
     <p>Sind Sie sicher, dass sie dieses Rettungsmittel "{{ object }}" löschen wollen?</p>
     <input type="submit" class="btn btn-success" role="button" value="Ja" />
     <a href="/rettungsmittel/" class="btn btn-danger" role="button">abbrechen</a>
 </form>
+{% else %}
+ <h2>Sie verfügen nicht über ausreichende Berechtigungen</h2>
+{% endif %}
 {% endblock %}
