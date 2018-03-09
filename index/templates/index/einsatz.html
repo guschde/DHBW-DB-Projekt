@@ -120,7 +120,7 @@
             {% if perms.index.delete_einsatz %}
             <td><a href="/einsatz/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">ändern</button> </td>
+            <td><button class="btn btn-secondary">löschen</button> </td>
             {% endif %}
         </tr>
     {% endfor %}
