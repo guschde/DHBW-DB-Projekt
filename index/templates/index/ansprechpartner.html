@@ -115,14 +115,14 @@
             <td>{{ x.Name }}</td>
             <td>{{ x.Infotext }}</td>
             {% if  perms.index.change_ansprechpartner %}
-            <td><a href="/ansprechpartner/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/ansprechpartner/upd/{{ x.id }}" class="btn btn-warning" role="button">Ändern</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">ändern</button> </td>
+            <td><button class="btn btn-secondary">Ändern</button> </td>
             {% endif %}
             {% if perms.index.delete_ansprechpartner %}
-            <td><a href="/ansprechpartner/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            <td><a href="/ansprechpartner/del/{{ x.id }}" class="btn btn-danger" role="button">Löschen</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">löschen</button> </td>
+            <td><button class="btn btn-secondary">Löschen</button> </td>
             {% endif %}
         </tr>
     {% endfor %}

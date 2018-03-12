@@ -78,13 +78,13 @@
       </div>
     </div>
 
-     <div class="container">
+     <div class="container col-sm-9 offset-sm-3 col-md-10 offset-md-1 pt-3">
        <h2>Vorfall</h2>
          <div class="row">
 
-          <div class="col-lg-6 portfolio-item">
+          <div class="col-lg-2 portfolio-item pb-2">
             {% if  perms.index.add_vorfall %}
-            <a href="/vorfall/add" class="btn btn-success" role="button">add</a>
+            <a href="/vorfall/add" class="btn btn-success btn-block" role="button">Hinzufügen</a>
             {% else %}
             <button class="btn btn-secondary">Hinzufügen</button>
             {% endif %}
@@ -101,8 +101,8 @@
                   <th>Einsatzbeginn</th>
                   <th>Einsatzende</th>
                   <th>Triagekategorie</th>
-                  <th>Update</th>
-                  <th>Delete</th>
+                  <th>Ändern</th>
+                  <th>Löschen</th>
                 </tr>
               </thead>
               <tbody>
@@ -117,21 +117,21 @@
             <td>{{ x.Einsatzende }}</td>
             <td>{{ x.Triagekategorie }}</td>
             {% if  perms.index.change_vorfall %}
-            <td><a href="/vorfall/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/vorfall/upd/{{ x.id }}" class="btn btn-warning" role="button">Ändern</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">ändern</button> </td>
+            <td><button class="btn btn-secondary">Ändern</button> </td>
             {% endif %}
             {% if perms.index.delete_vorfall %}
-            <td><a href="/vorfall/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            <td><a href="/vorfall/del/{{ x.id }}" class="btn btn-danger" role="button">Löschen</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">löschen</button> </td>
+            <td><button class="btn btn-secondary">Löschen</button> </td>
             {% endif %}
         </tr>
     {% endfor %}
 
 {% else %}
         <tr>
-            <td>hat nicht geklappt</td>
+            <td>Hat leider nicht funktioniert</td>
         </tr>
 {% endif %}
               </tbody>
