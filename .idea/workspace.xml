@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="df7f7165-00b4-4386-ac13-fca02fd5ac36" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/index/static/styles.css" afterPath="$PROJECT_DIR$/index/static/styles.css" />
       <change beforePath="$PROJECT_DIR$/index/templates/index/dienst.html" afterPath="$PROJECT_DIR$/index/templates/index/dienst.html" />
       <change beforePath="$PROJECT_DIR$/index/templates/index/index.html" afterPath="$PROJECT_DIR$/index/templates/index/index.html" />
+      <change beforePath="$PROJECT_DIR$/index/templates/index/layout.html" afterPath="$PROJECT_DIR$/index/templates/index/layout.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="personal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index/templates/index/personal.html">
+      <file leaf-file-name="layout.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index/templates/index/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="129" column="58" lean-forward="false" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
+            <state relative-caret-position="396">
+              <caret line="11" column="90" lean-forward="false" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -28,18 +30,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/templates/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+            <state relative-caret-position="288">
+              <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="90" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dienst.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dienst.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index/templates/index/dienst.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="865">
-              <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+            <state relative-caret-position="685">
+              <caret line="125" column="66" lean-forward="true" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -60,6 +62,11 @@
       <find>form</find>
       <find>container</find>
       <find>center</find>
+      <find>font</find>
+      <find>font-</find>
+      <find>body</find>
+      <find>font-size:</find>
+      <find>14px</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,8 +99,11 @@
         <option value="$PROJECT_DIR$/index/templates/index/rettungsmittel.html" />
         <option value="$PROJECT_DIR$/index/templates/index/einsatz.html" />
         <option value="$PROJECT_DIR$/index/templates/index/patient.html" />
-        <option value="$PROJECT_DIR$/index/templates/index/index.html" />
         <option value="$PROJECT_DIR$/index/templates/index/dienst.html" />
+        <option value="$PROJECT_DIR$/index/static/red-indigo.css" />
+        <option value="$PROJECT_DIR$/index/templates/index/index.html" />
+        <option value="$PROJECT_DIR$/index/static/styles.css" />
+        <option value="$PROJECT_DIR$/index/templates/index/layout.html" />
       </list>
     </option>
   </component>
@@ -128,6 +138,12 @@
               <item name="DHBW-DB-Projekt" type="b2602c69:ProjectViewProjectNode" />
               <item name="DHBW-DB-Projekt" type="462c0819:PsiDirectoryNode" />
               <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DHBW-DB-Projekt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DHBW-DB-Projekt" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DHBW-DB-Projekt" type="b2602c69:ProjectViewProjectNode" />
@@ -308,27 +324,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/polls/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="921">
-          <caret line="91" column="33" lean-forward="true" selection-start-line="91" selection-start-column="33" selection-end-line="91" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="16" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polls/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -535,14 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index/templates/index/personal.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="129" column="58" lean-forward="false" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index/templates/index/dienst_add.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -551,18 +538,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index/templates/index/index.html">
+    <entry file="file://$PROJECT_DIR$/index/templates/index/personal.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+        <state relative-caret-position="602">
+          <caret line="129" column="58" lean-forward="false" selection-start-line="129" selection-start-column="58" selection-end-line="129" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index/templates/index/dienst.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="865">
-          <caret line="111" column="12" lean-forward="false" selection-start-line="111" selection-start-column="12" selection-end-line="111" selection-end-column="12" />
+        <state relative-caret-position="685">
+          <caret line="125" column="66" lean-forward="true" selection-start-line="125" selection-start-column="66" selection-end-line="125" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/static/red-indigo.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="113806" lean-forward="false" selection-start-line="8" selection-start-column="113806" selection-end-line="8" selection-end-column="113806" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/static/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="6" column="10" lean-forward="false" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/index/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="8" column="5" lean-forward="false" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index/templates/index/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="11" column="90" lean-forward="false" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
           <folding />
         </state>
       </provider>
