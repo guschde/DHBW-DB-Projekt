@@ -95,7 +95,6 @@
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>PK</th>
                   <th>Name</th>
                   <th>Einsatz</th>
                   <th>Funkrufname</th>
@@ -111,7 +110,6 @@
   {% if liste %}
     {% for x in liste %}
         <tr>
-            <td>{{ x.id }}</td>
             <td>{{ x.Personal_ID }}</td>
             <td>{{ x.Einsatz_ID }}</td>
             <td>{{ x.Funkrufname }}</td>
