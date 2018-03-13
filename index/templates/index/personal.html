@@ -120,14 +120,14 @@
             <td>{{ x.Qualifikation }}</td>
             <!-- neue Spalten in der Tabelle mit Buttons zum ändern/löschen -->
             {% if  perms.index.change_personal %}
-            <td><a href="/personal/upd/{{ x.id }}" class="btn btn-warning" role="button">ändern</a></td>
+            <td><a href="/personal/upd/{{ x.id }}" class="btn btn-warning" role="button">Ändern</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">ändern</button> </td>
+            <td><button class="btn btn-secondary">Ändern</button> </td>
             {% endif %}
             {% if perms.index.delete_personal %}
-            <td><a href="/personal/del/{{ x.id }}" class="btn btn-danger" role="button">löschen</a></td>
+            <td><a href="/personal/del/{{ x.id }}" class="btn btn-danger" role="button">Löschen</a></td>
             {% else %}
-            <td><button class="btn btn-secondary">löschen</button> </td>
+            <td><button class="btn btn-secondary">Löschen</button> </td>
             {% endif %}
         </tr>
     {% endfor %}
