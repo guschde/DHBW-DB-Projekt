@@ -91,9 +91,9 @@ class Patient(models.Model):
 
 
 class Vorfall(models.Model):
-    triag = (('leichte Verletzungen', 'LEICHTE VERLETZUNGEN'),
-        ('mittlere Verletzungen', 'MITTLERE VERLETZUNGEN'),
-        ('schwere Verletzungen', 'SCHWERE VERLETZUNGEN'),
+    triag = (('geringes Risiko', 'GERINGES RISIKO'),
+        ('mittleres Risiko', 'MITTLERES RISIKO'),
+        ('hohes Risiko', 'HOHES RISIKO'),
     )
     Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
 #    Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
