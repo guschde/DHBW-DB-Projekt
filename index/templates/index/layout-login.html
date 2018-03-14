@@ -1,0 +1,41 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
+<link rel="icon" href="{% static 'bootstrap/favicon.png' %}" />
+<link href="{% static 'styles.css' %}" rel="stylesheet"/>
+<link href="{% static 'red-indigo.css' %}" rel="stylesheet"/>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>einsatz-info</title>
+
+</head>
+<body>
+    
+   
+<div class="container-fluid">
+    
+ <div class="mdl-layout mdl-layout__header--scroll mdl-js-layout mdl-color--grey-100">
+    <div class="own-ribbon"></div>
+    <main class="own-main mdl-layout__content">
+        <div class="own-container mdl-grid">
+            <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            <div class="own-content-error own-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800
+            mdl-cell mdl-cell--8-col">
+                {% block main %}{% endblock %}
+            </div>
+        </div>
+        <!--Brauchen wir nen Footer? ich glaub nicht <footer class="mdl-mini-footer mdl-color-text--white">
+            <div class="mdl-mini-footer--left-section">
+                <ul class="mdl-mini-footer--link-list">
+                </ul>
+            </div>
+        </footer> -->
+    </main>
+  </div>
+</div>
+ </body>
+</html>
