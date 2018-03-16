@@ -21,6 +21,7 @@ width:auto;
 #kreis:hover{
   transform: scale(1.2);
   filter: brightness(120%);
+  
 }
 
 a{
