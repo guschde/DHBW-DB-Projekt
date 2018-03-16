@@ -1,6 +1,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/docs/examples/dashboard/dashboard.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,20 +58,19 @@
           <h1>Vorfall berichten</h1>
             <section class="row text-center placeholders">
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/einsatz"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Einsatz</h4>
+                <a href="/einsatz"><div id="kreis" style="background-color: #0275D8"><H2>Einsatz</H2></div></a>
             </div>
+
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/dienst"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Dienst</h4>
+                <a href="/dienst"><div id="kreis" style="background-color: #00DC83"><H2>Dienst</H2></div></a>
             </div>
+
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/vorfall"><img src="{% static 'bootstrap/red_circle.png' %}" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Vorfall</h4>
+                <a href="/vorfall"><div id="kreis" style="background-color: #D9534F"><H2>Vorfall</H2></div></a>
             </div>
+
             <div class="col-6 col-sm-3 placeholder">
-                <a href="/patient"><img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="100" height="100" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></a>
-              <h4>Patient</h4>
+                <a href="/patient"><div id="kreis" style="background-color: #00DC83"><H2>Patient</H2></div></a>
             </div>
           </section>
 
