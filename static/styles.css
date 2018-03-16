@@ -7,6 +7,16 @@ img{
 width:auto;
 }
 
+#kreis{
+
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    border-radius: 100px;
+    padding-top: 10%;
+}
+
+
 .own-header{
 background-color: #292b2c;
 height: 56px;
@@ -36,13 +46,13 @@ color: #FFFFFF;
   max-width: 1600px;
   width: calc(100% - 16px);
   margin: 0 auto;
-  height: 90%;
+  height: 100%;
 }
 
 .own-content {
   border-radius: 2px;
-  padding: 80px 56px;
-  margin-bottom: 80px;
+  padding: 40px 90px;
+  margin-bottom: px;
 }
 
 .own-layout.is-small-screen .own-content {

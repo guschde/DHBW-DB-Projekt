@@ -7,6 +7,26 @@ img{
 width:auto;
 }
 
+#kreis{
+
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border-radius: 100px;
+    padding-top: 56px;
+    margin-left: 22%;
+    margin-top: 5px;
+    color: whitesmoke;
+}
+#kreis:hover{
+  transform: scale(1.2);
+  filter: brightness(120%);
+}
+
+a{
+text-decoration: none!important;
+}
+
 .own-header{
 background-color: #292b2c;
 height: 56px;

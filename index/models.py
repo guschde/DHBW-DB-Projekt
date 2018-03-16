@@ -1,7 +1,9 @@
 from django.db import models
 from datetime import datetime
 from datetime import date
+from django.core import validators
 from django.urls import reverse
+
 
 class Personal(models.Model):
     Vorname = models.CharField(max_length=50)
@@ -10,11 +12,11 @@ class Personal(models.Model):
     Bereitschaft = models.CharField(max_length=20)
     Qualifikation = models.CharField(max_length=20)
 
-#mehr als das muss in der models.py nicht geändert werden
+#   mehr als das muss in der models.py nicht geändert werden
     def get_absolute_url(self):
         if self == self:
             return ('/personal/')
-#mehr is es echt nicht xD
+#   mehr is es echt nicht xD
     def __str__(self):
         return self.Vorname+' '+self.Name
 
@@ -64,6 +66,7 @@ class Ansprechpartner(models.Model):
     def __str__(self):
         return self.Vorname+' '+self.Name
 
+
 class Rettungsmittel(models.Model):
     Bezeichnung = models.CharField(max_length=30)
    
@@ -74,15 +77,18 @@ class Rettungsmittel(models.Model):
     def __str__(self):
         return self.Bezeichnung
 
+
+
 class Patient(models.Model):
     sex = (('w', 'W'), ('m', 'M'))
+
     Vorname = models.CharField(max_length=20, default='Patientin')
     Name = models.CharField(max_length=20, default='Musterfrau')
-    Alter = models.IntegerField(default='1')
+    Alter = models.IntegerField(validators=(validators.MinValueValidator(0), validators.MaxValueValidator(110)))
     Geschlecht = models.CharField(max_length=1, choices=sex, default='W')
+
     def __str__(self):
         return self.Vorname+' '+self.Name
-    
     
     def get_absolute_url(self):
         if self == self:
@@ -96,7 +102,7 @@ class Vorfall(models.Model):
         ('hohes Risiko', 'HOHES RISIKO'),
     )
     Einsatz = models.ForeignKey(Einsatz, default='1', on_delete=models.CASCADE)
-#    Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
+#   Einsatzdatum = models.DateField('Einsatzdatum', default=date.today)
     Einsatzort = models.CharField(max_length=50, default='Heidenheim', editable=True)
     Einsatzbeginn = models.TimeField('Einsatzbeginn', default=datetime.now)
     Einsatzende = models.TimeField('Einsatzende', blank=True, null=True, default= "00:00:00")
