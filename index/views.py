@@ -18,26 +18,34 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         listoflists = []
-        patientlist = Patient.objects.all()
-        listoflists.append(patientlist)
+        patientlist = list(Patient.objects.all())
+        patientlist.reverse()
+        listoflists.append(patientlist[:5])
 
-        retterlist = Rettungsmittel.objects.all()
-        listoflists.append(retterlist)
+        retterlist = list(Rettungsmittel.objects.all())
+        retterlist.reverse()
+        listoflists.append(retterlist[:5])
 
-        vorfalllist = Vorfall.objects.all()
-        listoflists.append(vorfalllist)
+        vorfalllist = list(Vorfall.objects.all())
+        vorfalllist.reverse()
+        listoflists.append(vorfalllist[:5])
 
-        einsatzlist = Einsatz.objects.all()
-        listoflists.append(einsatzlist)
+        einsatzlist = list(Einsatz.objects.all())
+        einsatzlist.reverse()
+        listoflists.append(einsatzlist[:5])
 
-        dienstlist = Dienst.objects.all()
-        listoflists.append(dienstlist)
+        dienstlist = list(Dienst.objects.all())
+        dienstlist.reverse()
+        listoflists.append(dienstlist[:5])
 
-        personallist = Personal.objects.all()
-        listoflists.append(personallist)
+        personallist = list(Personal.objects.all())
+        personallist.reverse()
+        listoflists.append(personallist[:5])
 
-        ansprechparterlist = Ansprechpartner.objects.all()
-        listoflists.append(ansprechparterlist)
+        ansprechparterlist = list(Ansprechpartner.objects.all())
+        ansprechparterlist.reverse()
+        listoflists.append(ansprechparterlist[:5])
+
 
         return listoflists
 
@@ -46,18 +54,23 @@ class EinsatzView(generic.ListView):
     template_name = 'index/einsatz.html'
     context_object_name = 'liste'
     def get_queryset(self):
-        return Einsatz.objects.all()
+        liste = list(Einsatz.objects.all())
+        liste.reverse()
+        return liste
     
+
 class EinsatzCreate(generic.CreateView):
     template_name = 'index/einsatz_add.html'
     context_object_name = 'form'
     model = Einsatz
     fields = ['Personal_ID', 'Einsatzdatum', 'Einsatzinfo']
 
+
 class EinsatzUpdate(generic.UpdateView):
     model = Einsatz
     fields = ['Personal_ID', 'Einsatzdatum', 'Einsatzinfo']
     template_name_suffix = '_update'
+
 
 class EinsatzDelete(generic.DeleteView):
     model = Einsatz
@@ -67,8 +80,12 @@ class EinsatzDelete(generic.DeleteView):
 class DienstView(generic.ListView):
     template_name = 'index/dienst.html'
     context_object_name = 'liste'
+
     def get_queryset(self):
-        return Dienst.objects.all()
+        liste = list(Dienst.objects.all())
+        liste.reverse()
+        return liste
+
 
 class DienstCreate(generic.CreateView):
     template_name = 'index/dienst_add.html'
@@ -76,46 +93,54 @@ class DienstCreate(generic.CreateView):
     model = Dienst
     fields = ['Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit',  'Funkrufname']
 
+
 class DienstUpdate(generic.UpdateView):
     model = Dienst
     fields = ['Personal_ID', 'Einsatz_ID', 'Einsatzbeginnzeit', 'Einsatzendezeit', 'Funkrufname']
     template_name_suffix = '_update'
 
+
 class DienstDelete(generic.DeleteView):
     model = Dienst
     success_url = ('/dienst/')
-    
     
 
 class RettungsmittelView(generic.ListView):
     template_name = 'index/rettungsmittel.html'
     context_object_name = 'liste'
+
     def get_queryset(self):
-        return Rettungsmittel.objects.all()
+        liste = list(Rettungsmittel.objects.all())
+        liste.reverse()
+        return liste
     
+
 class RettungsmittelCreate(generic.CreateView):
     template_name = 'index/rettungsmittel_add.html'
     context_object_name = 'form'
     model = Rettungsmittel
     fields = ['Bezeichnung']
 
+
 class RettungsmittelUpdate(generic.UpdateView):
     model = Rettungsmittel
     fields = ['Bezeichnung']
     template_name_suffix = '_update'
+
 
 class RettungsmittelDelete(generic.DeleteView):
     model = Rettungsmittel
     success_url = ('/rettungsmittel/')
 
 
-
-
 class PatientView(generic.ListView):
     template_name = 'index/patient.html'
     context_object_name = 'liste'
     def get_queryset(self):
-        return Patient.objects.all()
+        liste = list(Patient.objects.all())
+        liste.reverse()
+        return liste
+
 
 class PatientCreate(generic.CreateView):
     template_name = 'index/patient_add.html'
@@ -138,7 +163,10 @@ class PersonalView(generic.ListView):
     context_object_name = 'liste'
 
     def get_queryset(self):
-        return Personal.objects.all()
+        liste = list(Personal.objects.all())
+        liste.reverse()
+        return liste
+
 #Neu Objekt erstellen ändern und löschen
 class PersonalCreate(generic.CreateView):
     template_name = 'index/personal_add.html'
@@ -161,16 +189,21 @@ class PersonalDelete(generic.DeleteView):
 class VorfallView(generic.ListView):
     template_name = 'index/vorfall.html'
     context_object_name = 'liste'
+
     def get_queryset(self):
-        return Vorfall.objects.all()
+        liste = list(Vorfall.objects.all())
+        liste.reverse()
+        return liste
 
 
 class VorfallDetailView(generic.DetailView):
 
     model = Vorfall
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
+
 
 class VorfallCreate(generic.CreateView):
     template_name = 'index/vorfall_add.html'
@@ -178,6 +211,7 @@ class VorfallCreate(generic.CreateView):
     model = Vorfall
     fields = ['Einsatz', 'Einsatzort', 'Einsatzbeginn',
                   'Einsatzende', 'Triagekategorie', 'Retter', 'Dienst', 'Patient']
+
 
 class VorfallUpdate(generic.UpdateView):
     model = Vorfall
@@ -194,8 +228,11 @@ class VorfallDelete(generic.DeleteView):
 class AnsprechpartnerView(generic.ListView):
     template_name = 'index/ansprechpartner.html'
     context_object_name = 'liste'
+
     def get_queryset(self):
-        return Ansprechpartner.objects.all()
+        liste = list(Ansprechpartner.objects.all())
+        liste.reverse()
+        return liste
 
 #Neu Objekt erstellen ändern und löschen
 class AnsprechpartnerCreate(generic.CreateView):
